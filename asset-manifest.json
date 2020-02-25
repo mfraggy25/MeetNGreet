@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/meetngreet/static/css/main.d1b05096.chunk.css",
-    "main.js": "/meetngreet/static/js/main.857bb37d.chunk.js",
-    "main.js.map": "/meetngreet/static/js/main.857bb37d.chunk.js.map",
-    "runtime-main.js": "/meetngreet/static/js/runtime-main.1ccc7727.js",
-    "runtime-main.js.map": "/meetngreet/static/js/runtime-main.1ccc7727.js.map",
-    "static/js/2.13a72663.chunk.js": "/meetngreet/static/js/2.13a72663.chunk.js",
-    "static/js/2.13a72663.chunk.js.map": "/meetngreet/static/js/2.13a72663.chunk.js.map",
-    "index.html": "/meetngreet/index.html",
-    "precache-manifest.0e09546f00d8ac732422229b44703827.js": "/meetngreet/precache-manifest.0e09546f00d8ac732422229b44703827.js",
-    "service-worker.js": "/meetngreet/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/meetngreet/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.13a72663.chunk.js.LICENSE.txt": "/meetngreet/static/js/2.13a72663.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/meetngreet/static/media/logo.5d5d9eef.svg"
+    "main.css": "/MeetNGreet/static/css/main.d1b05096.chunk.css",
+    "main.js": "/MeetNGreet/static/js/main.412f6f28.chunk.js",
+    "main.js.map": "/MeetNGreet/static/js/main.412f6f28.chunk.js.map",
+    "runtime-main.js": "/MeetNGreet/static/js/runtime-main.290eb1ff.js",
+    "runtime-main.js.map": "/MeetNGreet/static/js/runtime-main.290eb1ff.js.map",
+    "static/js/2.13a72663.chunk.js": "/MeetNGreet/static/js/2.13a72663.chunk.js",
+    "static/js/2.13a72663.chunk.js.map": "/MeetNGreet/static/js/2.13a72663.chunk.js.map",
+    "index.html": "/MeetNGreet/index.html",
+    "precache-manifest.fb4d0e2e6cdf9115fe973dad43d54495.js": "/MeetNGreet/precache-manifest.fb4d0e2e6cdf9115fe973dad43d54495.js",
+    "service-worker.js": "/MeetNGreet/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/MeetNGreet/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.13a72663.chunk.js.LICENSE.txt": "/MeetNGreet/static/js/2.13a72663.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/MeetNGreet/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1ccc7727.js",
+    "static/js/runtime-main.290eb1ff.js",
     "static/js/2.13a72663.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.857bb37d.chunk.js"
+    "static/js/main.412f6f28.chunk.js"
   ]
 }
