@@ -42,7 +42,7 @@
               const refreshCodeElement = document.getElementById('refreshCode')
               const refreshResult = document.getElementById('refreshResult')
               const refreshCodeValue= refreshCodeElement.value;
-              const lambraRefresh = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/refresh' + refreshCodeValue
+              const lambraRefresh = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/refresh/' + refreshCodeValue
               fetch(lambraRefresh)
                 .then(function(response) {
                   return response.json();
