@@ -45,6 +45,7 @@
               const lambraRefresh = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/refresh/' + refreshCodeValue
               fetch(lambraRefresh)
                 .then(function(response) {
+                  console.log('test here');  
                   return response.json();
                 })
                 .then(function(json) {
