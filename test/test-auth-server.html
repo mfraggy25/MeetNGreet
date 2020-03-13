@@ -17,41 +17,40 @@
 
         <script type="text/javascript">
 
-              const getTokenElement = document.getElementById('getToken');
-      getTokenElement.onclick = function() {
-        const codeElement = document.getElementById('code');
-        const resultElement = document.getElementById('result');
-        const codeValue = codeElement.value;
+        const getTokenElement = document.getElementById('getToken');
+        const getAccessTokenElement = document.getElementById('getNewAccessToken');
+        getTokenElement.onclick = function() {
+            const codeElement = document.getElementById('code');
+            const resultElement = document.getElementById('result');
+            const codeValue =  codeElement.value;
 
-        // get token script
-        const lambdaURL =
-        'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/token/' + codeValue;
+            // Replace this by your function endpoint
+            const lambdaURL = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/token/' + codeValue;
 
-        fetch(lambdaURL)
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(json) {
-            resultElement.innerText = JSON.stringify(json);
-          });
-      };
-
-      //refresh Script
-      const getRefreshElement = document.getElementById('refreshToken')
-            getRefreshElement.onclick = function() {
-              const refreshCodeElement = document.getElementById('refreshCode')
-              const refreshResult = document.getElementById('refreshResult')
-              const refreshCodeValue= refreshCodeElement.value;
-              const lambraRefresh = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/refresh/' + refreshCodeValue
-              fetch(lambraRefresh)
+            fetch(lambdaURL)
                 .then(function(response) {
-                  console.log('test here');  
-                  return response.json();
-                })
-                .then(function(json) {
-                  refreshResult.innerText = JSON.stringify(json)
-                })
-            }
+                    return response.json();
+            })
+            .then(function(json) {
+                resultElement.innerText = JSON.stringify(json);
+            });
+        }
+        getAccessTokenElement.onclick = function() {
+            const codeElement = document.getElementById('refresh_token');
+            const resultElement = document.getElementById('resultNew');
+            const codeValue =  codeElement.value;
+
+            // Replace this by your function endpoint
+            const lambdaURL = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/refresh/' + codeValue;
+
+            fetch(lambdaURL)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(json) {
+                resultElement.innerText = JSON.stringify(json);
+            });
+        }
     
           </script>
     </body>
