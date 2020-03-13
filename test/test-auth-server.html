@@ -31,8 +31,8 @@
                 .then(function(response) {
                     return response.json();
             })
-            .then(function(json) {
-                resultElement.innerText = JSON.stringify(json);
+                .then(function(json) {
+                    resultElement.innerText = JSON.stringify(json);
             });
         }
             const refreshTokenElement = document.getElementById('refreshToken');
@@ -42,14 +42,14 @@
             const refreshedValue =  refreshElement.value;
 
             // Replace this by your function endpoint
-            const lambdaURL = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/refresh/' + codeValue;
+            const lambdaURL = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/refresh/' + refreshedValue;
 
             fetch(lambdaURL)
-            .then(function(response) {
-                return response.json();
+                .then(function(response) {
+                    return response.json();
             })
-            .then(function(json) {
-                resultElement.innerText = JSON.stringify(json);
+                .then(function(json) {
+                    refreshedElement.innerText = JSON.stringify(json);
             });
         }
     
