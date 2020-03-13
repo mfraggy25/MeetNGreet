@@ -10,9 +10,9 @@
         </div>
 
         <div id="container refresh">
-            <input id="refreshCode" type="text" placeholder="refresh token">
+            <input id="refresh" type="text" placeholder="refresh token">
             <button id="refreshToken">Refresh Token</button>
-            <p id="refreshResult"></p>
+            <p id="refreshed"></p>
         </div>
 
         <script type="text/javascript">
@@ -35,10 +35,11 @@
                 resultElement.innerText = JSON.stringify(json);
             });
         }
-        getAccessTokenElement.onclick = function() {
-            const codeElement = document.getElementById('refresh_token');
-            const resultElement = document.getElementById('resultNew');
-            const codeValue =  codeElement.value;
+            const refreshTokenElement = document.getElementById('refreshToken');
+                refreshTokenElement.onclick = function(){
+            const refreshElement = document.getElementById('refresh');
+            const refreshElement = document.getElementById('refreshed');
+            const refreshedValue =  refreshElement.value;
 
             // Replace this by your function endpoint
             const lambdaURL = 'https://qdagcof6xk.execute-api.us-east-2.amazonaws.com/dev/api/refresh/' + codeValue;
