@@ -8,7 +8,7 @@ module.exports.getAccessToken = async event => {
     "?client_id=lrlpvmncurd803tghsn4kleoqv" +
     "&client_secret=9bf9lvmd9jlc4q21sr673b0a7m" +
     "&grant_type=authorization_code" +
-    "&redirect_uri=https://mfraggy25.github.io/" +
+    "&redirect_uri=https://mfraggy25.github.io/MeetNGreet" +
     "&code=" +
     event.pathParameters.code;
 
