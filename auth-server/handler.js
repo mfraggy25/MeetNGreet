@@ -3,12 +3,13 @@
 const axios = require("axios");
 
 module.exports.getAccessToken = async event => {
+  console.log("ca", event);
   const MEETUP_OAUTH_URL =
     "https://secure.meetup.com/oauth2/access" +
     "?client_id=lrlpvmncurd803tghsn4kleoqv" +
     "&client_secret=9bf9lvmd9jlc4q21sr673b0a7m" +
     "&grant_type=authorization_code" +
-    "&redirect_uri=https://mfraggy25.github.io/MeetNGreet" +
+    "&redirect_uri=https://mfraggy25.github.io/" +
     "&code=" +
     event.pathParameters.code;
 
@@ -17,7 +18,8 @@ module.exports.getAccessToken = async event => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true
     },
     body: JSON.stringify({
       access_token: info.data.access_token,
@@ -40,7 +42,8 @@ module.exports.refreshAccessToken = async event => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true
     },
     body: JSON.stringify({
       access_token: info.data.access_token,
