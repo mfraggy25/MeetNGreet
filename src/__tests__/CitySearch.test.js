@@ -39,23 +39,24 @@ describe("<CitySearch /> component", () => {
     CitySearchWrapper.setState({
       suggestions: [
         {
-          city: "Munich",
-          country: "de",
-          localized_country_name: "Germany",
-          name_string: "Munich, Germany",
-          zip: "meetup3",
-          lat: 48.14,
-          lon: 11.58
+          city: "Kitchener",
+          country: "ca",
+          localized_country_name: "Canada",
+          state: "ON",
+          name_string: "Kitchener, Ontario, Canada",
+          zip: "N2A 0A1",
+          lat: 43.44,
+          lon: -80.43
         },
         {
-          city: "Munich",
-          country: "us",
-          localized_country_name: "USA",
-          state: "ND",
-          name_string: "Munich, North Dakota, USA",
-          zip: "58352",
-          lat: 48.66,
-          lon: -98.85
+          city: "Kitchener",
+          country: "ca",
+          localized_country_name: "Canada",
+          state: "BC",
+          name_string: "Kitchener, British Columbia, Canada",
+          zip: "V0B 1W0",
+          lat: 49.17,
+          lon: -116.33
         }
       ]
     });
@@ -63,6 +64,6 @@ describe("<CitySearch /> component", () => {
     CitySearchWrapper.find(".suggestions li")
       .at(0)
       .simulate("click");
-    expect(CitySearchWrapper.state("query")).toBe("Munich, Germany");
+    expect(CitySearchWrapper.state("query")).toBe("Kitchener, Ontario, Canada");
   });
 });
