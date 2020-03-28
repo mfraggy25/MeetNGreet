@@ -52,36 +52,58 @@ describe("<Event /> component", () => {
   test("set mock event data as state", () => {
     EventWrapper.setState({
       event: {
-        local_time: "18:30",
-        local_date: "2020-05-20",
-        link:
-          "https://www.meetup.com/Guelph-Social-Mix-and-Mingle/events/wzfcnrybchbkc/",
-        visibility: "public_limited",
+        created: 1578798710000,
+        duration: 10800000,
+        id: "267845217",
+        name: "Hootenanny Acoustic Jam",
+        date_in_series_pattern: false,
+        status: "upcoming",
+        time: 1586628000000,
+        local_date: "2020-04-11",
+        local_time: "14:00",
+        updated: 1578798710000,
+        utc_offset: -14400000,
+        waitlist_count: 0,
+        yes_rsvp_count: 2,
+        venue: {
+          id: 26792284,
+          name: "Royal City Studios",
+          lat: 43.534446716308594,
+          lon: -80.31884002685547,
+          repinned: true,
+          address_1: "930 Woodlawn Rd W Unit 1",
+          city: "Guelph",
+          country: "ca",
+          localized_country_name: "Canada",
+          zip: "N1K 1T2",
+          state: "ON"
+        },
         group: {
-          created: 1453467538000,
-          name: "Guelph Social Mix & Mingle",
-          id: 19411896,
-          join_mode: "approval",
-          lat: 43.540000915527344,
-          lon: -80.2699966430664,
-          urlname: "Guelph-Social-Mix-and-Mingle",
-          who: "Mix and Mingle",
+          created: 1578004988000,
+          name: "Guelph Music Jams Meetup Group",
+          id: 33158012,
+          join_mode: "open",
+          lat: 43.5,
+          lon: -80.23999786376953,
+          urlname: "Guelph-Music-Jams-Meetup-Group",
+          who: "Members",
           localized_location: "Guelph, ON",
           state: "ON",
           country: "ca",
           region: "en_US",
           timezone: "Canada/Eastern"
         },
-        waitlist_count: 0,
-        yes_rsvp_count: 0,
-        duration: 9000000,
-        time: 1590013800000,
-        utc_offset: -14400000,
-        name: "3rd Wednesday--FUN with CARDS NIGHT in GUELPH",
-        id: "wzfcnrybchbkc"
+        link:
+          "https://www.meetup.com/Guelph-Music-Jams-Meetup-Group/events/267845217/",
+        description:
+          "<p>Come join us at our Hootenanny! Jam to some great folk or bluegrass tunes. Bring your voices, banjos, mandolins, fiddles, accordions, guitars, harmonicas, or even spoons! Pay what you can, $10 suggested.</p> ",
+        how_to_find_us:
+          "Go to the main entrance across the parking lot from Sutcliffe Kitchens.  We'll be there to greet you in the lobby.",
+        visibility: "public",
+        member_pay_fee: false
       }
     });
     console.log(EventWrapper.state("event"));
-    expect(EventWrapper.state("event").name).toBe("Guelph Social Mix & Mingle");
+    expect(EventWrapper.state("event").name).toBe("Hootenanny Acoustic Jam");
   });
 });

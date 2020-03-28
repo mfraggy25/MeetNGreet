@@ -8,27 +8,23 @@ describe("<NumberOfEvents /> component", () => {
     NumberOfEventsWrapper = shallow(<NumberOfEvents />);
   });
 
-  test("render textbox element", () => {
-    expect(NumberOfEventsWrapper.find(".numberOfEvents")).toHaveLength(1);
-  });
-
   test("render text input correctly", () => {
     const numberOfEvents = NumberOfEventsWrapper.state("numberOfEvents");
     expect(
-      NumberOfEventsWrapper.find("#numberOfEvents__input").prop("value")
+      NumberOfEventsWrapper.find("#numberOfEvents-input").prop("value")
     ).toBe(numberOfEvents);
   });
 
-  test("when no number was input, 30 is the default event number", () => {
-    expect(NumberOfEventsWrapper.state("eventNumber")).toBe(30);
+  test("update state when input is changed", () => {
+    const eventObject = { target: { value: 20 } };
+    NumberOfEventsWrapper.find("#numberOfEvents-input").simulate(
+      "change",
+      eventObject
+    );
+    expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(20);
   });
 
-  test("change state when number input changes", () => {
-    const eventObject = { target: { value: 25 } };
-    NumberOfEventsWrapper.find("input").simulate("change", eventObject);
-    expect(NumberOfEventsWrapper.state("eventNumber")).toBe(20);
-  });
-  test("show number of events input label", () => {
+  test("render label with numer of events", () => {
     expect(NumberOfEventsWrapper.find(".numberOfEvents label")).toHaveLength(1);
   });
 });
