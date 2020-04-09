@@ -10,24 +10,24 @@ class App extends Component {
   state = {
     events: [],
     lat: null,
-    lon: null
+    lon: null,
   };
 
   componentDidMount() {
-    getEvents().then(response => this.setState({ events: response }));
+    getEvents().then((response) => this.setState({ events: response }));
     this.updateEvents(30);
   }
 
   updateEvents = (lat, lon) => {
-    getEvents(lat, lon).then(events => this.setState({ events }));
+    getEvents(lat, lon).then((events) => this.setState({ events }));
   };
 
   render() {
     return (
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
-        <NumberOfEvents />
         <EventList events={this.state.events} />
+        <NumberOfEvents numOfEventsListed={this.state.numOfEventsListed} />
       </div>
     );
   }

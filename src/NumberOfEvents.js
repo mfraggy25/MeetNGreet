@@ -2,22 +2,22 @@ import React, { Component } from "react";
 
 class NumberOfEvents extends Component {
   state = {
-    NumberOfEvents: 30
+    NumberOfEvents: 30,
   };
 
-  handleInputChanged = event => {
+  handleInputChanged = (event) => {
     const value = event.target.value;
-    this.setState({ numberOfEvents: value });
+    this.setState({ NumberOfEvents: value });
   };
 
   render() {
     return (
-      <div className="numberOfEvents">
+      <div className="NumberOfEvents">
         <label>Number of events:</label>
         <input
           type="text"
-          id="numberOfEvents-input"
-          value={this.state.numberOfEvents}
+          id="NumberOfEvents-input"
+          value={this.state.NumberOfEvents}
           onChange={this.handleInputChanged}
         />
       </div>
