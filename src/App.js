@@ -13,11 +13,6 @@ class App extends Component {
     lon: null,
   };
 
-  componentDidMount() {
-    getEvents().then((response) => this.setState({ events: response }));
-    this.updateEvents(30);
-  }
-
   updateEvents = (lat, lon) => {
     getEvents(lat, lon).then((events) => this.setState({ events }));
   };
