@@ -17,9 +17,9 @@ defineFeature(feature, (test) => {
     });
 
     then(
-      "only the names of the events are shown while the elements are collapsed",
+      "Only the names of the events are shown while the elements are collapsed",
       () => {
-        expect(AppWrapper.find(".eventDetails")).toHaveLength(1);
+        expect(AppWrapper.find(".eventDetails")).toHaveLength(0);
       }
     );
   });
@@ -37,7 +37,7 @@ defineFeature(feature, (test) => {
 
     when("the user clicks on an event", () => {
       AppWrapper.update();
-      AppWrapper.find(".eventButton").at(1).simulate("click");
+      AppWrapper.find(".eventButton").at(0).simulate("click");
     });
 
     then("the user can view the details", () => {
@@ -58,12 +58,12 @@ defineFeature(feature, (test) => {
 
     and("the user has finished reading the details of an event", () => {
       AppWrapper.update();
-      AppWrapper.find(".eventButton").at(1).simulate("click");
+      AppWrapper.find(".eventButton").at(0).simulate("click");
       expect(AppWrapper.find(".eventDetails")).toHaveLength(1);
     });
 
     when("the user clicks on the event again", () => {
-      AppWrapper.find(".eventButton").at(1).simulate("click");
+      AppWrapper.find(".eventButton").at(0).simulate("click");
     });
 
     then("the event elements are collapsed", () => {
