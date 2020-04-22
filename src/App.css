@@ -60,7 +60,7 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
-.Event {
+.event {
   padding: 10px 10px 20px;
   margin-bottom: 10px;
   text-align: left;
@@ -98,8 +98,8 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-.number-of-events {
-  width: 80px;
+.numberOfEvents {
+  width: 200px;
   margin: 20px 0 50px;
-  text-align: right;
+  text-align: left;
 }
