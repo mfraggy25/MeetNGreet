@@ -6,11 +6,11 @@ describe("show/hide an event details", () => {
   beforeAll(async () => {
     browser = await puppeteer.launch({
       headless: false,
-      slowMo: 50, //slow doen by 250ms
+      slowMo: 250, // slow down by 250ms
     });
     page = await browser.newPage();
     await page.goto("http://localhost:3000/");
-    await page.waitForSelector(".event");
+    await page.waitForSelector(".Event");
   });
 
   afterAll(() => {
@@ -22,28 +22,30 @@ describe("show/hide an event details", () => {
     const page = await browser.newPage();
     await page.goto("http://localhost:3000/");
 
-    await page.waitForSelector(".event");
+    await page.waitForSelector(".Event");
 
-    const extra = await page.$(".event .extra");
+    const extra = await page.$(".Event .extra");
     expect(extra).toBeNull();
     browser.close();
   });
+
   test("User can expand an event to see its details", async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto("http://localhost:3000/");
 
-    await page.waitForSelector(".event");
-    await page.click(".event .details-btn");
+    await page.waitForSelector(".Event");
+    await page.click(".Event .details-btn");
 
-    const extra = await page.$(".event .extra");
+    const extra = await page.$(".Event .extra");
     expect(extra).toBeDefined();
     browser.close();
   });
-  test("User can collapse an event to hide its details", async () => {
-    await page.click(".event .details-btn");
 
-    const extra = await page.$(".event .extra");
+  test("User can collapse an event to hide its details", async () => {
+    await page.click(".Event .details-btn");
+
+    const extra = await page.$(".Event .extra");
     expect(extra).toBeNull();
   });
 });
