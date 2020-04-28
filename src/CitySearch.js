@@ -1,16 +1,30 @@
 import React, { Component } from "react";
 import { getSuggestions } from "./api";
+import { InfoAlert } from "./Alert";
 
 class CitySearch extends Component {
   state = {
     query: "",
-    suggestions: []
+    suggestions: [],
   };
 
-  handleInputChanged = event => {
+  handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ query: value });
-    getSuggestions(value).then(suggestions => this.setState({ suggestions }));
+    getSuggestions(value).then((suggestions) => {
+      this.setState({ suggestions });
+
+      if (value && suggestions.length === 0) {
+        this.setState({
+          infoText:
+            "We cannot find the city you are looking for. Please try another city",
+        });
+      } else {
+        this.setState({
+          infoText: "",
+        });
+      }
+    });
   };
 
   handleItemClicked = (value, lat, lon) => {
@@ -28,7 +42,7 @@ class CitySearch extends Component {
           value={this.state.query}
         />
         <ul className="suggestions">
-          {this.state.suggestions.map(item => (
+          {this.state.suggestions.map((item) => (
             <li
               key={item.name_string}
               onClick={() =>
