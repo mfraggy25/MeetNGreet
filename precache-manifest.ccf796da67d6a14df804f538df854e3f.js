@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "853ce6e4dc5c2dbac72290d67496e98a",
+    "revision": "f2fffb00196b12f78310f551ae73f49e",
     "url": "/MeetNGreet/index.html"
   },
   {
-    "revision": "b810f88d28c11678c70f",
+    "revision": "2504dc8a8b5ecf286055",
     "url": "/MeetNGreet/static/css/main.a30162c7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MeetNGreet/static/js/2.60d461c1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b810f88d28c11678c70f",
-    "url": "/MeetNGreet/static/js/main.d5b2d8db.chunk.js"
+    "revision": "2504dc8a8b5ecf286055",
+    "url": "/MeetNGreet/static/js/main.95e03209.chunk.js"
   },
   {
     "revision": "bc2f6e176d33444ad3e3",
