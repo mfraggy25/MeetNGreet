@@ -46,6 +46,12 @@ async function getEvents(lat, lon, page) {
     return mockEvents.events;
   }
 
+  //check to see if online
+  if (!navigator.onLine) {
+    const events = localStorage.getItem("lastEvents");
+    return JSON.parse(events);
+  }
+
   const token = await getAccessToken();
 
   if (token) {
@@ -65,35 +71,13 @@ async function getEvents(lat, lon, page) {
     }
     const result = await axios.get(url);
     const events = result.data.events;
+    if (events.length) {
+      // Check if the events exist
+      localStorage.setItem("lastEvents", JSON.stringify(events));
+    }
     return events;
   }
-}
-
-function getAccessToken() {
-  const accessToken = localStorage.getItem("access_token");
-
-  if (!accessToken) {
-    const searchParams = new URLSearchParams(window.location.search);
-    const code = searchParams.get("code");
-
-    if (!code) {
-      window.location.href =
-        "https://secure.meetup.com/oauth2/authorize?client_id=lrlpvmncurd803tghsn4kleoqv&response_type=code&redirect_uri=https://mfraggy25.github.io/MeetNGreet/";
-      return null;
-    }
-
-    return getOrRenewAccessToken("get", code);
-  }
-
-  const lastSavedTime = localStorage.getItem("last_saved_time");
-
-  if (accessToken && Date.now() - lastSavedTime < 3600000) {
-    return accessToken;
-  }
-
-  const refreshToken = localStorage.getItem("refresh_token");
-
-  return getOrRenewAccessToken("renew", refreshToken);
+  return [];
 }
 
 async function getOrRenewAccessToken(type, key) {
@@ -120,6 +104,32 @@ async function getOrRenewAccessToken(type, key) {
 
   // Return the access_token
   return tokenInfo.data.access_token;
+}
+
+function getAccessToken() {
+  const accessToken = localStorage.getItem("access_token");
+
+  if (!accessToken) {
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get("code");
+
+    if (!code) {
+      window.location.href =
+        "https://secure.meetup.com/oauth2/authorize?client_id=lrlpvmncurd803tghsn4kleoqv&response_type=code&redirect_uri=https://mfraggy25.github.io/MeetNGreet/";
+      return null;
+    }
+
+    return getOrRenewAccessToken("get", code);
+  }
+
+  const lastSavedTime = localStorage.getItem("last_saved_time");
+
+  if (accessToken && Date.now() - lastSavedTime < 3600000) {
+    return accessToken;
+  }
+
+  const refreshToken = localStorage.getItem("refresh_token");
+  return getOrRenewAccessToken("renew", refreshToken);
 }
 
 export { getSuggestions, getEvents, getAccessToken };
