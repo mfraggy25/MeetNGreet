@@ -5,7 +5,7 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents } from "./api";
-import { OfflineAlert } from "./Alert";
+import { OfflineAlert, WarningAlert } from "./Alert";
 
 class App extends Component {
   state = {
@@ -55,9 +55,22 @@ class App extends Component {
     }
   };
 
+  noEvent = () => {
+    if (this.state.events.length === 0) {
+      this.setState({
+        infoText: "No events found here.",
+      });
+    } else {
+      this.setState({
+        infoText: "",
+      });
+    }
+  };
+
   render() {
     return (
       <div className="App">
+        <OfflineAlert text={this.state.offlineText} />
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents
           updateEvents={this.updateEvents}
@@ -65,8 +78,8 @@ class App extends Component {
           lat={this.state.lat}
           lon={this.state.lon}
         />
+        {this.state.noEvent && <WarningAlert text={this.state.infoText} />}
         <EventList events={this.state.events} />
-        <OfflineAlert text={this.state.offlineText} />
       </div>
     );
   }
