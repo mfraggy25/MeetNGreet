@@ -16,6 +16,11 @@ p {
   margin: 5px 0;
 }
 
+.header {
+  font-family: "Permanent Marker", cursive;
+  font-size: 48;
+}
+
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -95,6 +100,9 @@ input[type="number"] {
 }
 
 .description {
+  border: 1px solid rgb(155, 154, 154);
+  border-radius: 4px;
+  background-color: rgb(240, 208, 208);
   overflow-x: hidden;
 }
 
@@ -109,4 +117,16 @@ input[type="number"] {
   padding: 1.2rem;
   font-size: 1rem;
   height: 1.1rem;
+}
+
+.event__Overview {
+  font-weight: bold;
+}
+
+.EventList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  color: #102f69;
 }
