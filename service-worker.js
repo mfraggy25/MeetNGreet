@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/MeetNGreet/precache-manifest.e3d90978b636f071a8a9a36c417a75d2.js"
+  "/MeetNGreet/precache-manifest.88031921f352145115fd8a03e2dd0d31.js"
 );
 
 self.addEventListener('message', (event) => {
