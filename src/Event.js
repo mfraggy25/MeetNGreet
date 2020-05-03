@@ -41,9 +41,6 @@ class Event extends Component {
           <p className="event__Overview--localDate">
             {this.props.event.local_date}
           </p>
-          <p className="eventLocationCity">
-            City: {event.venue && event.venue.city}
-          </p>
           <button className="details-btn" onClick={() => this.handleDetails()}>
             Show Details
           </button>
